@@ -6,6 +6,9 @@
 	let someLng = -78.4767;
 	let mapComponent;
 	let center = { lat: someLat, lng: someLng };
+
+	export let data;
+	console.log(data);
 </script>
 
 <div class="map-wrap">
@@ -15,9 +18,16 @@
 		style={'mapbox://styles/mapbox/dark-v11'}
 		{center}
 	>
-		<Marker lat={someLat} lng={someLng} label="some marker label" popupClassName="class-name">
-			<div class="crosshair" />
-		</Marker>
+		{#each Object.keys(data.props.data) as sensorId}
+			<Marker
+				lat={data.props.data[sensorId].latitude}
+				lng={data.props.data[sensorId].longitude}
+				label={data.props.data[sensorId].name}
+				popupClassName="none"
+			>
+				<div class="crosshair" />
+			</Marker>
+		{/each}
 	</Map>
 </div>
 
