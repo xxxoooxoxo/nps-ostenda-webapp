@@ -1,38 +1,39 @@
-# create-svelte
+# Networked Public Space Ostenda Dashboard
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+A real-time air quality monitoring dashboard that visualizes air pollutants in public spaces.
 
-## Creating a project
+## Overview
 
-If you're seeing this, you've probably already done this step. Congrats!
+The Networked Public Space Ostenda Dashboard is a responsive web application designed to provide users with an easy way to monitor and visualize air quality data in public spaces. This project is built using SvelteKit and PiccoCSS, offering a lightweight and performant user experience.
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+## Features
 
-# create a new project in my-app
-npm create svelte@latest my-app
+- Real-time air quality data visualization
+- Displays air pollutants such as PM2.5, PM10, temperature, humidity, and atmospheric pressure
+- Easy-to-understand color-coded indicators for air quality levels
+- Responsive design suitable for desktop and mobile devices
+
+## Getting Started
+
+To set up the project locally, follow these steps:
+
+1. Clone the repository:
 ```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+git clone https://github.com/xxxoooxoxo/nps-ostenda-webapp.git
 ```
+2. Navigate to the project directory:
+`cd nps-ostenda-webapp`
+3. Install dependencies:
+`npm install`
+4. Start the development server:
+`npm run dev`
 
-## Building
+The application should now be running on `http://localhost:3000`.
 
-To create a production version of your app:
+## Data Sources
 
-```bash
-npm run build
-```
+The dashboard retrieves air quality data from the PurpleAir API, which provides real-time information from a network of air quality sensors.
 
-You can preview the production build with `npm run preview`.
+## Contributing
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+Contributions are welcome! If you have any ideas, suggestions, or improvements, feel free to submit a pull request or open an issue.
