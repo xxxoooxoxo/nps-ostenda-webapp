@@ -8,7 +8,6 @@
 	let center = { lat: someLat, lng: someLng };
 
 	export let data;
-	console.log(data);
 </script>
 
 <div class="map-wrap">
@@ -17,6 +16,7 @@
 		accessToken={PUBLIC_MAPBOX_TOKEN}
 		style={'mapbox://styles/mapbox/dark-v11'}
 		{center}
+		zoom="5"
 	>
 		{#each Object.keys(data.props.data) as sensorId}
 			<Marker
@@ -25,6 +25,11 @@
 				label={data.props.data[sensorId].name}
 				popupClassName="none"
 			>
+				<div slot="popup">
+					<a href="/nodes/{data.props.data[sensorId].sensor_index}">
+						{JSON.stringify(data.props.data[sensorId])}
+					</a>
+				</div>
 				<div class="crosshair" />
 			</Marker>
 		{/each}
@@ -34,7 +39,7 @@
 <style>
 	.map-wrap {
 		width: 100%;
-		height: 100vh;
+		height: 100%;
 		z-index: -1;
 		position: absolute;
 	}

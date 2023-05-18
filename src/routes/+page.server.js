@@ -1,8 +1,8 @@
-import { getCurrentData } from '../lib/api/purpleair';
+import { getInitialData } from '../lib/api/purpleair';
 
 export async function load() {
 	try {
-		const data = await getCurrentData();
+		const data = await getInitialData();
 		return {
 			status: 200,
 			props: {
